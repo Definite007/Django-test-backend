@@ -39,10 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'home.apps.HomeConfig'
+    'home'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost"
+]
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:4200']
+
+CORS_ALLOW_CREDENTIALS = True
+
+AUTH_USER_MODEL = 'home.User'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
